@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.P18_mobilka">
         <activity
-            android:name=".MainActivity"
+            android:name=".BasketActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="infrastructure.OrderService"
+            android:enabled="true"
+            android:exported="false"/>
+
     </application>
 
 </manifest>
