@@ -29,7 +29,7 @@ public class BasketUpdate extends MyAsyncTask {
             Connection.Response  response = Jsoup.connect(Settings.Url + "/api/basket/update")
                     .ignoreContentType(true)
                     .ignoreHttpErrors(true)
-                    .method(Connection.Method.GET)
+                    .method(Connection.Method.PUT)
                     .header("Content-type", "application/json")
                     .header("token", token)
                     .requestBody(rawData)

@@ -55,7 +55,7 @@ public class OrderService  extends Service {
 
                         @Override
                         public void onError(String error) {
-                            Log.e(TAG, error)
+                            Log.e(TAG, error);
                         }
                     }
             );

@@ -34,7 +34,7 @@ import infrastructure.OrderService;
 
 public class BasketActivity extends AppCompatActivity {
 
-    public static String TOKEN = "d3de116e-4ac1-4d5f-ad51-8c00aa682ee";
+    public static String TOKEN = "d831d144-3dc8-4398-9241-ad7c9703729e";
 
     ArrayList<ProductBasket> ProductsBasket = new ArrayList<>();
 
@@ -47,7 +47,7 @@ public class BasketActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.basket_activity);
 
         AllItems = findViewById(R.id.AllItems);
         tvAllSum = findViewById(R.id.tvAllSum);
@@ -138,7 +138,7 @@ public class BasketActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String error) {
-                        Log.d("BASKET UPDATE", error);
+                        Log.e("BASKET UPDATE", error);
                     }
                 }
         );
@@ -178,7 +178,7 @@ public class BasketActivity extends AppCompatActivity {
                 ProductBasket.count=0;
                 onBasketUpdate(ProductBasket);
             });
-            AllSum += ProductBasket.product.price+ProductBasket.count;
+            AllSum += ProductBasket.product.price*ProductBasket.count;
             AllItems.addView(itemOrder);
         }
         tvAllSum.setText(AllSum + "р");

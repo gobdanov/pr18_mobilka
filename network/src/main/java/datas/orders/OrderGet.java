@@ -22,10 +22,10 @@ public class OrderGet extends MyAsyncTask {
     @Override
     protected String doInBackground(Void... voids){
         try{
-            Connection.Response  response = Jsoup.connect(Settings.Url + "/api/order/get" + id)
+            Connection.Response  response = Jsoup.connect(Settings.Url + "/api/order/get/" + id)
                     .ignoreContentType(true)
                     .ignoreHttpErrors(true)
-                    .method(Connection.Method.POST)
+                    .method(Connection.Method.GET)
                     .header("Content-type", "application/json")
                     .header("token", token)
                     .execute();
